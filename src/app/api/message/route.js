@@ -44,12 +44,13 @@ export const POST = async (request) => {
   }
 
   const messageId = nanoid();
+  DB.messages.push(roomId, messageId, messageText);
 
   writeDB();
 
   return NextResponse.json({
     ok: true,
-    // messageId,
+    messageId: messageId,
     message: "Message has been sent",
   });
 };

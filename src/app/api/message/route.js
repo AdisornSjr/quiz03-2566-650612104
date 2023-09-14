@@ -44,7 +44,7 @@ export const POST = async (request) => {
   }
 
   const messageId = nanoid();
-  DB.messages.push(roomId, messageId, messageText);
+  DB.messages.push({ roomId, messageId, messageText });
 
   writeDB();
 
